@@ -1,3 +1,2 @@
 theme: jekyll-theme-architect
-extra_javascript:
-    <script src="https://tryhackme.com/badge/31286"></script>
+extra_javascript: <script src="https://tryhackme.com/badge/31286"></script>
