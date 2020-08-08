@@ -57,8 +57,9 @@ attacking ssh://10.10.239.250:22/
 Then ssh into the machine.
 :~$ ssh jake@10.10.239.250
 
-## Priviledge Escalation
 ```
+## Priviledge Escalation
+
 jake@brookly_nine_nine:~$ sudo -l
 Matching Defaults entries for jake on brookly_nine_nine:
     env_reset, mail_badpass,
