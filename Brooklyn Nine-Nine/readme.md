@@ -69,8 +69,9 @@ User jake may run the following commands on brookly_nine_nine:
     (ALL) NOPASSWD: /usr/bin/less
 ```
   
-``` 
 so no need for sudo password for "less" ok.
+
+```
 https://gtfobins.github.io/gtfobins/less/
 
 jake@brookly_nine_nine:~$ sudo less /etc/profile
